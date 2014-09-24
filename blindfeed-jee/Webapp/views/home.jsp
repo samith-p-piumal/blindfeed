@@ -10,17 +10,13 @@
 	Hello Blind-Feed Developers. Let's Start..!!!  
 </h1>
 
-<P>  The time on the server is ${serverTime}. </P>
-     <div style="font-size: 20px; font-family: cursive;">User Programming Template</div>   
-	<br>
-	<div style="font-size: 20px; font-family: monospace;"><a href="home">Person API</a></div>
-	<br>
-	<div style="font-size: 20px; font-family: cursive;">User Interface Template</div>
-	<ul>
-		<li style="font-size: 20px; font-family: fantasy;"><a href="index">Unregisterd User</a></li>
-		<li style="font-size: 20px; font-family: fantasy;"><a href="userindex">Trusted User</a></li>
-		<li style="font-size: 20px; font-family:  fantasy;"><a href="Nuserindex">Registerd User</a></li>
-	</ul>
+<P>  The time on the server is  </P>
+	${rerequestScope['usr'] }
+	<% 
+	HttpSession session=request.getSession(false);
+	String name=(String)session.getAttribute("usr"); %>
 	
+	<%=name %>
+	<a href="logout">logout</a>
 </body>
 </html>

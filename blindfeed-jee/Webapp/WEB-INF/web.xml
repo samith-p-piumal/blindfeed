@@ -4,8 +4,6 @@
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
-  
-  <!-- map the more than one path to same servlet -->
   <servlet>
     <servlet-name>TestServlet</servlet-name>
     <servlet-class>org.picasso.controllers.TestServ</servlet-class>
@@ -16,8 +14,7 @@
     <url-pattern>/ReturnAge</url-pattern>
     <url-pattern>/ReturnHost</url-pattern>
   </servlet-mapping>
-  
-  <!-- error handling page -->
+
   <error-page>
     <error-code>404</error-code>
     <location>/error.jsp</location>
