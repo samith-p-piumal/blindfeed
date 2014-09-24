@@ -17,6 +17,6 @@
 	String name=(String)session.getAttribute("usr"); %>
 	
 	<%=name %>
-	<a href="logout">logout</a>
+	<a href="out">logout</a>
 </body>
 </html>

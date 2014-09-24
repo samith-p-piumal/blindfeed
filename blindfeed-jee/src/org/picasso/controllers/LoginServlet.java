@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.sun.jndi.toolkit.url.Uri;
+
 /**
  * Servlet implementation class LoginServlet
  */
@@ -30,26 +32,31 @@ public class LoginServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
         
-        
-HttpSession session=request.getSession();
-	
+		HttpSession session=request.getSession();
+			
+		
+		String usrpath=request.getServletPath();
+		
+		if(usrpath.equals("/in")){
+			System.out.println("hello");
+
 			String userName=request.getParameter("userName");
 			String password=request.getParameter("password");
 			
 			System.out.println(userName+" "+password);
-			
-			
+					
 			session.setAttribute("usr", userName);
 			
 			RequestDispatcher rd = getServletContext().getRequestDispatcher("/views/home.jsp");
 	        rd.include(request, response);
+		}else if(usrpath.equals("/out")){
+			System.out.println("world");
+			RequestDispatcher rd = getServletContext().getRequestDispatcher("/views/home.jsp");
+	        rd.include(request, response);
+	        session.invalidate();
+		}
 		
-			System.out.println("start......");
-			//response.sendRedirect("/views/home.jsp");
-			System.out.println("ending....");
-		
-
-		System.out.println("over...");
+			
 	}
 
 }

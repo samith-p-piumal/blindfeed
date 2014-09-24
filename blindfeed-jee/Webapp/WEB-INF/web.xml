@@ -15,6 +15,15 @@
     <url-pattern>/ReturnHost</url-pattern>
   </servlet-mapping>
 
+	<servlet>
+		<servlet-name>loginserv</servlet-name>
+		<servlet-class>org.picasso.controllers.LoginServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>loginserv</servlet-name>
+		<url-pattern>/in</url-pattern>
+		<url-pattern>/out</url-pattern>
+	</servlet-mapping>
   <error-page>
     <error-code>404</error-code>
     <location>/error.jsp</location>

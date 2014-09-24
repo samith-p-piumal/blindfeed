@@ -10,7 +10,7 @@
 <body>
 	<h3>Hello Picasso!!!! </h3>
 	<div>
-		<form action="loginProcess" method="Post">
+		<form action="in" method="Post">
 			<input type="text" name="userName">
 			<input type="text" name="password">
 			<input type="submit" value="signIn">
