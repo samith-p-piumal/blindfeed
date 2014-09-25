@@ -26,6 +26,7 @@ public class LoginValidator {
 		Context envContext=(Context) initContext.lookup("java:/comp/env");
 		dataSource=(DataSource) envContext.lookup("jdbc/dbpool");
 		
+		
 		connection=dataSource.getConnection();
 		statment = connection.createStatement();
 		String query = "SELECT * FROM user";

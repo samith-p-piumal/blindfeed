@@ -52,7 +52,13 @@ public class LoginServlet extends HttpServlet {
 			
 			LoginValidator login=new LoginValidator();
 			try {
-				System.out.println(login.validLogin(userName, password));
+				if (login.validLogin(userName, password)) {
+					RequestDispatcher rd = getServletContext().getRequestDispatcher("/views/RegisterdUser/index.jsp");
+			        rd.include(request, response);
+				}else{
+					RequestDispatcher rd = getServletContext().getRequestDispatcher("/views/unreguser/");
+			        rd.forward(request, response);
+				}
 				
 			} catch (NamingException e) {
 				// TODO Auto-generated catch block
@@ -62,8 +68,7 @@ public class LoginServlet extends HttpServlet {
 				e.printStackTrace();
 			}
 			
-			/*RequestDispatcher rd = getServletContext().getRequestDispatcher("/views/RegisterdUser/index.jsp");
-	        rd.include(request, response);*/
+			
 			
 		}else if(usrpath.equals("/logoutProcess")){
 			System.out.println("world");
