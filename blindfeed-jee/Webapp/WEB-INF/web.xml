@@ -21,8 +21,8 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>loginserv</servlet-name>
-		<url-pattern>/in</url-pattern>
-		<url-pattern>/out</url-pattern>
+		<url-pattern>/loginProcess</url-pattern>
+		<url-pattern>/logoutProcess</url-pattern>
 	</servlet-mapping>
   <error-page>
     <error-code>404</error-code>

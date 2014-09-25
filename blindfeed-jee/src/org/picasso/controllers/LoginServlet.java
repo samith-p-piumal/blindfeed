@@ -1,7 +1,9 @@
 package org.picasso.controllers;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
+import javax.naming.NamingException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -37,23 +39,38 @@ public class LoginServlet extends HttpServlet {
 		
 		String usrpath=request.getServletPath();
 		
-		if(usrpath.equals("/in")){
+		if(usrpath.equals("/loginProcess")){
 			System.out.println("hello");
 
-			String userName=request.getParameter("userName");
-			String password=request.getParameter("password");
+			String userName=request.getParameter("EMail");
+			String password=request.getParameter("Password");
 			
 			System.out.println(userName+" "+password);
 					
 			session.setAttribute("usr", userName);
 			
-			RequestDispatcher rd = getServletContext().getRequestDispatcher("/views/home.jsp");
-	        rd.include(request, response);
-		}else if(usrpath.equals("/out")){
+			
+			LoginValidator login=new LoginValidator();
+			try {
+				System.out.println(login.validLogin(userName, password));
+				
+			} catch (NamingException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			/*RequestDispatcher rd = getServletContext().getRequestDispatcher("/views/RegisterdUser/index.jsp");
+	        rd.include(request, response);*/
+			
+		}else if(usrpath.equals("/logoutProcess")){
 			System.out.println("world");
-			RequestDispatcher rd = getServletContext().getRequestDispatcher("/views/home.jsp");
-	        rd.include(request, response);
-	        session.invalidate();
+			session.invalidate();
+			RequestDispatcher rd = getServletContext().getRequestDispatcher("/views/unreguser/");
+	        rd.forward(request, response);
+	        
 		}
 		
 			

@@ -11,9 +11,9 @@
     <link rel="shortcut icon" href="../../docs-assets/ico/favicon.png">
     <title>BlindFeed</title>
     <!-- Bootstrap core CSS -->
-    <link href='<c:url value="resources/css/bootstrap.css"></c:url>' rel="stylesheet">
+    <link href='<c:url value="/css/bootstrap.css"></c:url>' rel="stylesheet">
     <!-- Custom styles for this template -->
-    <link href='<c:url value="/resources/css/navbar-fixed-top.css"></c:url>' rel="stylesheet">
+    <link href='<c:url value="/css/navbar-fixed-top.css"></c:url>' rel="stylesheet">
 
   </head>
 <body>
@@ -33,13 +33,13 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">නිවහන</a></li>
-            <li><a href="about">විස්තර</a></li>
-            <li><a href="contact">අප ගැන</a></li>
-            <li><a href="help">උදව්</a></li>
+            <li><a href="${pageContext.request.contextPath}/views/unreguser/about.jsp">විස්තර</a></li>
+            <li><a href="${pageContext.request.contextPath}/contact.jsp">අප ගැන</a></li>
+            <li><a href="${pageContext.request.contextPath}/help.jsp">උදව්</a></li>
             
           </ul>
 
-  <form action="login1" class="navbar-form navbar-right" role="form" method="post" commandName="login_user">
+  <form action="${pageContext.request.contextPath}/loginProcess" class="navbar-form navbar-right" role="form" method="post">
             <div class="form-group">
               <input type="text" placeholder="Email" name="EMail" class="form-control">
             </div>
@@ -47,7 +47,7 @@
               <input type="password" placeholder="Password" name="Password" class="form-control">
             </div>
             <button type="submit" class="btn btn-success">ඇතුළු වන්න</button>
-             <a class="btn btn-success" href="regi" role="button">එක් වන්න අලුතෙන්</a>
+             <a class="btn btn-success" href="#" role="button">එක් වන්න අලුතෙන්</a>
           </form>
 
           <ul class="nav navbar-nav navbar-right"> 
@@ -82,7 +82,7 @@
 තම මයික්‍රපෝනය ට කියවා එම හඩපටය අපගේ වෙබ් අඩවියට ඇතුලත් කිරීම පමණි.
 			</p>
 			<p>
-          <a class="btn btn-lg btn-primary" href="about" role="button">තව විස්තර බලන්න &raquo;</a>
+          <a class="btn btn-lg btn-primary" href="about.jsp" role="button">තව විස්තර බලන්න &raquo;</a>
         </p>
 			
         </div>
@@ -109,7 +109,7 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script src='<c:url value="resources/js/bootstrap.min.js"></c:url>'></script>
+    <script src='<c:url value="/js/bootstrap.min.js"></c:url>'></script>
   </body>
 </body>
 </html>
